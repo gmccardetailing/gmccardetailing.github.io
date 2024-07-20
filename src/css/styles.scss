@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap');
+
+$blanco: #FEFEFE;
+$gris: #A9C0CE;
+$azul_oscuro: #051723;
+$naranja: #F99851;
+
+$fuentePrincipal: 'Krub', sans-serif;
+
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    body{
+        font-size: 1.6rem;
+        background-color: $azul_oscuro;
+        color: $blanco;
+        font-family: $fuentePrincipal;
+        scroll-behavior: smooth;
+        a{
+            text-decoration: none;
+            color: $blanco;
+        }
+        li{
+            list-style: none;
+        }
+        .contenedor{
+            max-width: 120rem;
+            margin: 0 auto;
+        }
+        .navegacion{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgba($color: #000000, $alpha: .3);
+            .navegacion__logo{
+                .logo__titulo{
+                    color: $naranja;
+                    font-weight: bold;
+                    font-size: 3rem;
+                    .titulo__mayor{
+                        font-size: 3.7rem;
+                    }
+                }
+            }
+            .navegacion__menu{
+                display: flex;
+                gap: 5rem;
+                font-size: 2rem;
+                font-weight: bold;
+                .menu__link{
+                    transition: color .25s;
+                    text-transform: uppercase;
+                }
+                .menu__link:hover{
+                    color: $naranja;
+                }
+            }
+        }
+
+        @media (max-width: 768px){
+            .navegacion{
+                flex-direction: column;
+                gap: 2rem;
+                .navegacion__logo{
+                    margin-top: 1rem;
+                    .logo__titulo{
+                        font-size: 2.5rem;
+                        .titulo__mayor{
+                            font-size: 3rem;
+                        }
+                    }
+                }
+                .navegacion__menu{
+                    flex-direction: row;
+                    gap: 6rem;
+                    font-size: 1.8rem;
+                    .menu__link{
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+        @media (max-width: 480px){
+            .navegacion{
+                .navegacion__menu{
+                    flex-direction: column;
+                    gap: 2rem;
+                    .menu__link{
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+        header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10rem;
+            height: 80vh;
+            align-items: center;
+            .header__texto {
+                .domicilio {
+                    text-transform: uppercase;
+                    color: $naranja;
+                    font-weight: bold;
+                    white-space: nowrap; /* Evita el salto de línea */
+                }
+            .texto__titulo {
+                font-size: 5.5rem;
+                color: $naranja;
+                text-align: center;
+                .titulo__mayor {
+                    font-size: 6.5rem;
+                }
+            }
+            .texto__descripcion {
+                font-size: 2.5rem;
+                color: $blanco;
+                text-align: center;
+                font-weight: bold;
+            }
+            .localizacion {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                .localizacion__lugar {
+                    color: $naranja;
+                    font-weight: bold;
+                    font-size: 2.5rem;
+                }
+            }
+            }
+            .header__imagen {
+                .imagen__img {
+                    width: 70rem;
+                }
+            }
+            .redes {
+                display: flex;
+                justify-content: center;
+                gap: 4rem;
+                margin-top: 3rem;
+                a {
+                    background-color: rgba(#000000, 0.3);
+                    border-radius: 50%;
+                    padding: 1rem;
+                    transition: transform 0.25s;
+                }
+                a:hover {
+                    transform: scale(1.2);
+                }
+            }
+            @media (max-width: 1024px) {
+                .header__imagen {
+                    display: none;
+                }
+            }
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr;
+                .texto__titulo {
+                    font-size: 3.5rem !important;
+                    .titulo__mayor {
+                        font-size: 4.5rem !important;
+                    }
+                }
+            }
+            @media (max-width: 480px) {
+                grid-template-columns: 1fr;
+                gap: 0rem;
+                .header__texto {
+                    .domicilio {
+                        font-size: 2rem; /* Ajuste de tamaño del texto para móviles */
+                        display: block; /* Para asegurar que esté en su propia línea */
+                        text-align: center; /* Centramos el texto */
+                    }
+                }
+            }
+        }
+
+        main {
+            section {
+                margin-top: 15rem;
+
+                .servicios__titulo {
+                    color: $naranja;
+                    font-size: 6rem;
+                    font-weight: bold;
+                    text-align: center;
+                }
+
+                .servicios__contenedor {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    gap: 2rem;
+
+                    .servicio {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        /* Asegura que el contenido se distribuya */
+                        border: 3px solid $naranja;
+                        border-radius: 6rem;
+                        padding: 1rem 3rem;
+                        height: 100%;
+                        /* Asegura que todas las tarjetas tengan la misma altura */
+
+                        .servicio__titulo {
+                            margin-top: 3rem;
+                            color: $naranja;
+                            font-size: 4.5rem;
+                            text-align: center;
+                        }
+
+                        .servicio__tiempo {
+                            color: $naranja;
+                            font-size: 2.5rem;
+                            text-align: center;
+                            margin-top: -3rem;
+                        }
+
+                        .servicio__precio {
+                            color: $naranja;
+                            font-size: 7rem;
+                            text-align: center;
+                            font-weight: bold;
+                            margin: 0;
+                            margin-bottom: 1rem;
+                        }
+
+                        .novedad {
+                            color: $naranja;
+                            font-weight: bold;
+                        }
+
+                        .servicio__items {
+                            flex-grow: 1;
+
+                            /* Hace que este elemento crezca para ocupar el espacio disponible */
+                            .servicio__item {
+                                font-size: 2rem;
+                                line-height: 3rem;
+                            }
+                        }
+                    }
+                }
+
+                @media (max-width: 1024px) {
+                    .servicios__contenedor {
+                        grid-template-columns: 1fr;
+                        margin: 0 10rem 5rem 10rem;
+                        /* Añade margen a los lados y margen inferior */
+                    }
+
+                    .servicio {
+                        height: auto;
+                        /* Permite que las tarjetas se ajusten a la altura que necesitan */
+                        margin-bottom: 5rem;
+                        /* Añade margen inferior entre las tarjetas */
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .servicios__contenedor {
+                        grid-template-columns: 1fr;
+                        margin: 0 2rem 5rem 2rem;
+                        /* Ajuste de margen para móviles */
+                    }
+
+                    .servicio {
+                        height: auto;
+                        /* Permite que las tarjetas se ajusten a la altura que necesitan */
+                        margin-bottom: 5rem;
+                        /* Añade margen inferior entre las tarjetas */
+                    }
+                }
+            }
+        }
+
+        .extras {
+            margin-top: 20rem;
+            margin-bottom: 10rem;
+            .extras__titulo {
+                color: $naranja;
+                font-size: 6rem;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .extras__contenedor {
+                margin-top: -5rem;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                /* 4 columnas por defecto */
+
+                .extra {
+                    .extra__titulo {
+                        color: $naranja;
+                        font-size: 2.5rem;
+                        text-align: center;
+                    }
+
+                    .extra__precio {
+                        font-size: 2.5rem;
+                        text-align: center;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            @media (max-width: 1024px) {
+                .extras__contenedor {
+                    grid-template-columns: 1fr 1fr;
+                    /* 2 columnas en tablets */
+                }
+            }
+
+            @media (max-width: 480px) {
+                .extras__contenedor {
+                    grid-template-columns: 1fr 1fr;
+                    /* 2 columnas en móviles */
+                }
+            }
+        }
+
+        footer{
+            background-color: rgba($color: #000000, $alpha: .3);
+            margin-bottom: 0;
+            padding: 1rem 0;
+            p{
+                color: $naranja;
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+
+        .contacto {
+            margin-top: 20rem;
+            margin-bottom: 10rem;
+
+            .contacto__titulo {
+                color: $naranja;
+                font-size: 6rem;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .contacto__contenedor {
+                text-align: center;
+                padding: 0 10rem;
+                /* Añadido padding para tablets */
+
+                p {
+                    color: $blanco;
+                    font-size: 2.5rem;
+                    text-align: center;
+                    margin-top: 2rem;
+                    line-height: 3.5rem;
+
+                    .naranja {
+                        color: $naranja;
+                        font-weight: bold;
+                        display: block;
+                    }
+                }
+
+                a {
+                    display: inline-block;
+                    text-align: center;
+                    transition: transform 0.25s;
+                    background-color: rgba(0, 0, 0, 0.3);
+                    border-radius: 50%;
+                    padding: 1rem;
+                    margin-top: 2rem;
+                }
+
+                a:hover {
+                    transform: scale(1.2);
+                }
+            }
+
+            @media (max-width: 1024px) {
+                .contacto__contenedor {
+                    padding: 0 5rem;
+                    /* Ajusta el padding para tablets */
+                }
+            }
+
+            @media (max-width: 480px) {
+                .contacto__contenedor {
+                    padding: 0 2rem;
+                    /* Ajusta el padding para móviles */
+                }
+            }
+        }
+          
+    }
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
